@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4 laba</title>
+</head>
+<body>
+    <script>
+        function one(){
+            let x = parseInt(prompt("Введите x"));
+            if (x > 0)
+                alert(Math.pow(Math.sin(x), 2));
+            else
+                alert(1 - 2 * Math.sin(x*x));
+        }
+        function two(){
+            let n = parseInt(prompt("Введите n, проверю на полиндром"));
+            var numberString = n.toString();
+            var reversedString = numberString.split('').reverse().join('');
+            if (numberString === reversedString) {
+                alert(true);
+            } else {
+                alert(false);
+            }
+        }
+        function three(){
+            let n = parseInt(prompt("Введите год: ")); //160000(400*400)
+            let res = n < 100 ? n % 4 : n % 400;
+            if (res == 0) 
+                alert("Это год високосный");
+            else 
+                alert("Это год невисокосный");
+        }
+        function four(){
+            let x = parseInt(prompt("Введите x"));
+            if (x < -1) alert("-1");
+            if (x > -1) alert(x);
+            if (x == -1) alert("1");
+        }
+        function five(){
+            let month = parseInt(prompt("Введите номер месяца"));
+            if (month == 12 || month == 1 || month == 2) 
+                alert("Зима");
+            else if (3 <= month && month <= 5) 
+                alert("Весна");
+            else if (6 <= month && month <= 8) 
+                alert("Лето");
+            else if (9 <= month && month <= 11) 
+                alert("Осень");
+            else 
+                alert("Некорректный номер месяца");
+        }
+        function six(){
+            let m = parseInt(prompt("Введите номер масти: "));
+            let k = parseInt(prompt("Введите номер карты: "));
+            let suit = "";
+            let rank = "";
+            switch (m)
+            {
+                case 1:
+                    suit = "пики";
+                    break;
+                case 2:
+                    suit = "треф";
+                    break;
+                case 3:
+                    suit = "буби";
+                    break;
+                case 4:
+                    suit = "черви";
+                    break;
+                default:
+                    alert("Неверный ввод m");
+                    return;
+            }
+            
+            switch (k)
+            {
+                case 6:
+                    rank = "Шестерка";
+                    break;
+                case 7:
+                    rank = "Семерка";
+                    break;
+                case 8:
+                    rank = "Восьмерка";
+                    break;
+                case 9:
+                    rank = "Девятка";
+                    break;
+                case 10:
+                    rank = "Десятка";
+                    break;
+                case 11:
+                    rank = "Валет";
+                    break;
+                case 12:
+                    rank = "Дама";
+                    break;
+                case 13:
+                    rank = "Король";
+                    break;
+                case 14:
+                    rank = "Туз";
+                    break;
+                default:
+                    alert("Неверный ввод k");
+                    return;
+            }
+            alert(rank +" "+ suit);            
+        }
+        function seven(){
+            let year = parseInt(prompt("Введите год"));
+            var animals = ['Крыса', 'Корова', 'Тигр', 'Заяц', 'Дракон', 'Змея', 'Лошадь', 'Овца', 'Обезьяна', 'Петух', 'Собака', 'Свинья'];
+            var colors = ['Зеленый', 'Красный', 'Желтый', 'Белый', 'Черный'];
+          
+            var subCycle = (year - 1984) % 60;
+            var animalIndex = subCycle % 12;
+            var colorIndex = Math.floor(subCycle / 12);
+          
+            alert(animals[animalIndex] + ', ' + colors[colorIndex]);
+        }
+        function eight(){
+            let result =  ""
+            for (let i = 1; i <= 10; i++) {
+            const x = 9 * i;
+            result += `9 * ${i} = ${x}` + "\n";
+            }
+            alert(result);
+        }
+        function nine(){
+            let result = "";
+            for(let i = 1; i <= 20; i++)
+                {
+                    result += `sin ${i} = ${Math.sin(i)}` + "\n";
+                }
+            alert(result);
+        }
+        function ten(){
+            let result = 0;
+            for(let i = 100; i <=500; i++)
+                result += i;
+            alert("а) Сумма всех чисел от 100 до 500 = " + result);
+            
+            let a = parseInt(prompt("б) Введите a (a<=500)"));
+            if(a > 500) {
+                alert("Число больше 500!");
+                return;
+            }
+            result = 0;
+            for(let i = a; i <=500; i++)
+                result += i;
+            alert(`Сумма всех чисел от ${a} до 500 = ${result}`);
+            
+            let b = parseInt(prompt("в) Введите b (b=>–10)"));
+            if(b < -10)
+            {
+                alert("Число меньше -10!");
+                return;
+            }
+            result = 0;
+            for(let i =- 10; i <= b; i++)
+            {
+                result += i;
+            }
+            alert(`Сумма всех чисел от -10 до ${b} = ${result}`);
+            
+            a = parseInt(prompt("г) Введите a (b=>a)"));
+            b = parseInt(prompt("г) Введите b (b=>a)"));
+            if (a > b) {
+                alert("Число a больше b!");
+                return;
+            }
+            result = 0;
+            for (let i = a; i <= b; i++)
+                result += i;
+            alert(`Сумма всех чисел от ${a} до ${b} = ${result}`);
+        }
+        function eleven(){
+            let res = 1;
+            let n = prompt('Введите n: ');
+            for(let i = 2; i <= n; i++){
+                res += 1/n;
+            }
+            alert("Сумма равна: " + res);
+        }
+        function twelve(){
+            let x = parseInt(prompt("Введите x"));
+            let y = parseInt(prompt("Введите y"));
+
+            let result1 = x;
+            let result2 = y;
+            for (let i = 0; i < y-1; i++) result1+=x;
+            for (let i = 0; i < x-1; ++i) result2+=y;
+            alert("Первый способ: " + result1);
+            alert("Второй способ: " + result2);
+        }
+        function thirteen(){
+            let x = parseInt(prompt("Введите n"));
+            let result = 0;
+            for (let i = 1; i <= x ; i++)
+                result += 2 * i - 1;
+            alert(x + "^2 = " + result);
+        }
+        function fourteen(){
+            let x = 0;
+            for (let i = 50; i >= 1; i--)
+            {
+                x= Math.sqrt(i + x);
+            }
+            alert(x);
+        }
+        function fifteen(){
+            let numbers = [1, 2, 3, 3, 4, 3, 555, 0];
+            let sum = 0;
+            let count = 0;
+            for(let i = 0; numbers[i] != 0; i++)
+            {
+                sum += numbers[i];
+                count ++;
+            }
+            alert("1, 2, 3, 3, 4, 3, 555, 0\nСумма: " + sum );
+            alert("1, 2, 3, 3, 4, 3, 555, 0\nКол-во чисел: " + count );
+        }
+        function sixteen(){
+            let numbers = [5, 3, 3, 4, -1];
+            let result = 0;
+            let sum = 0;
+            for(let i = 0; numbers[i] >= 0; i++)
+            {
+                sum+= numbers[i];
+            }
+            result = sum / (numbers.length - 1);
+            alert("Среднее ариметическое 5, 3, 3, 4, -1: " + result);
+        }
+        function seventeen(){
+            let n = parseInt(prompt("Введите натуральное число: "));
+            var a = 0; //а
+            var b = 0; //б
+            var c = 0; //в
+            var d = 0; //г
+            var e = 1; //д
+            var f = 0; //е
+            var numberString = n.toString();
+            for (var i = 0; i < numberString.length; i++) {
+              var digit = parseInt(numberString[i]);
+          
+              if (digit === 3) {
+                a++;
+              }
+          
+              if (digit === parseInt(numberString[numberString.length - 1])) {
+                b++;
+              }
+          
+              if (digit % 2 === 0) {
+                c++;
+              }
+          
+              if (digit > 5) {
+                d += digit;
+              }
+          
+              if (digit > 7) {
+                e *= digit;
+              }
+          
+              if (digit === 0 || digit === 5) {
+                f++;
+              }
+            }
+            alert(`Само число: ${numberString}\nКоличество цифр 3: ${a}\nСколько раз в нем встречается последняя цифра: ${b}\nКоличество четных цифр в нем: ${c}\nСумму его цифр, больших пяти: ${d}\nПроизведение его цифр, больших семи: ${e}\nКоличество раз в нем встречаются цифры 0 и 5(всего): ${f}`);
+        }
+        function eighteen(){
+            let number = parseInt(prompt("Введите натуральное число, в котором все цифры различны: ")); 
+            let digits = number.toString().split('').map(Number); 
+             
+            let maxDigit = Math.max(...digits); 
+            let minDigit = Math.min(...digits); 
+             
+            let reverseDigits = [...digits].reverse(); 
+             
+            let maxIndexFromEnd = reverseDigits.indexOf(maxDigit) + 1; 
+            let maxIndexFromStart = digits.indexOf(maxDigit) + 1; 
+             
+            let minIndexFromEnd = reverseDigits.indexOf(minDigit) + 1; 
+            let minIndexFromStart = digits.indexOf(minDigit) + 1; 
+             
+            alert(`Порядковый номер максимальной цифры ${maxDigit} от конца числа: ${maxIndexFromEnd}\nПорядковый номер максимальной цифры ${maxDigit} от начала числа: ${maxIndexFromStart}\nПорядковый номер минимальной цифры ${minDigit} от конца числа: ${minIndexFromEnd}\nПорядковый номер минимальной цифры ${minDigit} от начала числа: ${minIndexFromStart}`); 
+        }
+        function nineteen(){
+            let n = parseInt(prompt("Введите натуральное число: "));
+            let value = 2;
+            while(value != n)
+            {
+                if (n % value == 0)
+                {
+                    alert("Число не простое");
+                    return;
+                } 
+                value++;
+            }
+            alert("Число простое");
+        }
+        function twenty() {
+            let n = parseInt(prompt("Введите натуральное число: "));
+            let nArr = n.toString().split('');//1321
+            let isOrder = true;
+            for(let i = 0; i <= nArr.length; i++){
+                if(nArr[i] > nArr[i+1]){
+                    alert("Число не упорядочено");
+                    isOrder = false;
+                    break;
+                }
+            }
+
+            if(isOrder){
+                alert("Число упорядочено");
+            }
+        }
+        function twenty_one(){
+            const sequence = [1, 3, 5, 7, 9, 10, 11, 13, 15, 18, 25, 50, 52, 731, 777, 3213, 10000]; 
+            let n = parseInt(prompt("Введите число n:\nа я определю порядковый номер первого числа, больше этого n "));
+            let index = null;
+            for (let i = 0; i < sequence.length; i++) { 
+                if (sequence[i] > n) { 
+                    index = i + 1; 
+                    break; 
+                } 
+            }
+            if (index)
+                alert(`[1, 3, 5, 7, 9, 10, 11, 13, 15, 18, 25, 50, 52, 731, 777, 3213, 10000]\nПорядковый номер первого числа, большего ${n}, равен ${index}. Это число ${sequence[index-1]}`);
+            else 
+                alert(`В последовательности нет чисел, больших ${n}`);
+        }
+        function twenty_two(){
+            let n = parseInt(prompt("Введите натуральное число n: \n//12344445667")); 
+            let a = prompt('Введите число a\n//4');
+            let b = prompt('Введите число b\n//6');
+            let countA = 0;
+            let countB = 0;
+            for(let i = 0; i < n.length-1; i++){
+                if(n[i]==a) 
+                    countA++;
+                if(n[i]==b) 
+                    countB++;
+            }
+            if(countA<countB) 
+                alert(`Да, цифра ${a} встречается реже, чем ${b}`);
+            else 
+                alert(`Нет, цифра ${a} не встречается реже, чем ${b}`);
+        }
+        function twenty_three(){
+            let num = 10; 
+            let output = 'Оператор цикла с предусловием\n'; 
+            while (num <= 30) { 
+                output += num + '\n'; 
+                num++; 
+            } 
+            alert(output); 
+            
+            num = 10; 
+            output = 'Оператор цикла с постусловием\n'; 
+            do { 
+                output += num + '\n';
+                num++; 
+            } while (num <= 30); 
+            alert(output);
+        }
+    </script>
+    <button onclick="one()">Задание 1</button>
+    <button onclick="two()">Задание 2</button>
+    <button onclick="three()">Задание 3</button>    
+    <button onclick="four()">Задание 4</button>
+    <button onclick="five()">Задание 5</button>
+    <button onclick="six()">Задание 6</button>
+    <button onclick="seven()">Задание 7</button>
+    <button onclick="eight()">Задание 8</button>
+    <button onclick="nine()">Задание 9</button>
+    <button onclick="ten()">Задание 10</button><br><br>
+    <button onclick="eleven()">Задание 11</button>
+    <button onclick="twelve()">Задание 12</button>
+    <button onclick="thirteen()">Задание 13</button>
+    <button onclick="fourteen()">Задание 14</button>
+    <button onclick="fifteen()">Задание 15</button>
+    <button onclick="sixteen()">Задание 16</button>
+    <button onclick="seventeen()">Задание 17</button>
+    <button onclick="eighteen()">Задание 18</button>
+    <button onclick="nineteen()">Задание 19</button>
+    <button onclick="twenty()">Задание 20</button><br><br>
+    <button onclick="twenty_one()">Задание 21</button>
+    <button onclick="twenty_two()">Задание 22</button>
+    <button onclick="twenty_three()">Задание 23</button>
+</body>
+</html>
