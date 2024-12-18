@@ -533,4 +533,4 @@ return [paperBin, glassBin, organicBin, plasticBin];
 }   
 ```
 ## <center>_Вывод_</center>
-Таким образом, мне удалось поработать с
+Таким образом, мне удалось поработать с основами языка js
